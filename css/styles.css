@@ -168,7 +168,11 @@ body {
 	}
 
 	.tweet-actions {
+		visibility: hidden;
 		text-align: right;
+	}
+	.tweet:hover .tweet-actions{
+		visibility: visible;
 	}
 		.tweet-actions ul {
 			list-style-type: none;
@@ -210,6 +214,7 @@ body {
 	}
 
 	.stats {
+		display: none;
 		margin: 12px 0 12px 42px;
 		border-top: 1px solid #e8e8e8;
 	}
@@ -250,6 +255,7 @@ body {
 		}
 
 		.reply {
+			display: none;
 			position: relative;
 			clear: both;
 			padding-left: 43px;
