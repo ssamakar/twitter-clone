@@ -54,18 +54,22 @@ $(document).ready(function(){
 		$(".tweet").click(function(){
 			$(this).find(".reply, .stats").slideDown();
 		})
-		$(".tweet").mouseleave(function(){
-			$(this).find(".reply, .stats").slideUp();
-		});
+		// $(".tweet").mouseleave(function(){
+		// 	$(this).find(".reply, .stats").slideUp();
+		// });
 	};
 
 	$("#tweet-submit").on('click', function(){
 		var tweetText = $(".tweet-compose").val();
+		var currentDate = new Date();
+		var insertDate = $.timeago(currentDate);
 		var newTweet = $("#stream .tweet").first().clone();
 		$(newTweet).find("p").first().text(tweetText);
 		$(newTweet).find("img").first().attr("src", "img/alagoon.jpg");
 		$(newTweet).find(".fullname").text(handle);
 		$(newTweet).find(".username").text("@hacksaw");
+		$(newTweet).find(".timeago").text(insertDate);
+		$(newTweet).find(".timeago").attr("title", "" + currentDate + "");
 		$("#tweet-content > .tweet-compose").css({"height": "2.5em"})
 		$("#tweet-content > .tweet-compose").val("")
 	 	$("#tweet-controls").toggle();
